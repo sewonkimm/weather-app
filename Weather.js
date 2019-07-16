@@ -55,7 +55,7 @@ const weatherCases = {
       }
 }
 function Weather({ weathername, temp }){
-    return(
+    return (
         <LinearGradient 
             colors={weatherCases[weathername].colors} 
             style={styles.container} 
@@ -69,7 +69,7 @@ function Weather({ weathername, temp }){
                 <Text style={styles.subtitle}>{weatherCases[weathername].subtitle}</Text>
             </View>
         </LinearGradient>
-    );
+    )
 }
 
 Weather.porpTypes = {
@@ -81,7 +81,8 @@ export default Weather;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        width: '100%'
     },
     upper: {
         flex: 1,

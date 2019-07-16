@@ -40,27 +40,25 @@ export default class App extends Component {
   render() {
     const { isLoaded, error, temperature, name } = this.state;
     return (
-      <View style={styles.loading}>
+      <View style={styles.container}>
         <StatusBar hidden={true} />
         { isLoaded ? (
           <Weather weathername={name} temp={Math.floor(temperature - 273.15)} />
         ) : (
-          <View>
+          <View style={styles.loading}>
             <Text style={styles.loadingText}>Getting weather</Text>
             { error ? <Text style={styles.errorText}>{error}</Text> : null }
           </View>)
         }
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff'
   },
   errorText: {
     color: "red",
